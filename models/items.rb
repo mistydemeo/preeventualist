@@ -17,3 +17,41 @@ class Items < ActiveRecord::Base
     }
   end
 end
+
+class LostItem < Items
+  def initialize opts
+    properties = {
+      name:         opts["name"],
+      item:         opts["item"],
+      location:     opts["seen"],
+      description:  opts["desc"],
+      kind:         "lost",
+      public_id:    Brooklynt.new.to_i
+    }
+    super properties
+  end
+
+  def self.where query
+    query[:kind] = "lost"
+    super query
+  end
+end
+
+class FoundItem < Items
+  def initialize opts
+    properties = {
+      name:         opts["name"],
+      item:         opts["item"],
+      location:     opts["at"],
+      description:  opts["desc"],
+      kind:         "found",
+      public_id:    Brooklynt.new.to_i
+    }
+    super properties
+  end
+
+  def self.where query
+    query[:kind] = "found"
+    super query
+  end
+end

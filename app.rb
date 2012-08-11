@@ -39,7 +39,7 @@ get "/lost/searchlost" do
 
   validate_count
 
-  return search_response_for Items.where(:kind => "lost", :item => params["q"]).limit params["count"]
+  return search_response_for LostItem.where(:item => params["q"]).limit params["count"]
 end
 
 get "/lost/searchfound" do
@@ -50,7 +50,7 @@ get "/lost/searchfound" do
 
   validate_count
 
-  return search_response_for Items.where(:kind => "found", :item => params["q"]).limit params["count"]
+  return search_response_for FoundItem.where(:item => params["q"]).limit params["count"]
 end
 
 # This should really be POST, but Poignant Guide's API didn't distinguish
@@ -60,14 +60,7 @@ get "/lost/addlost" do
     return invalid_input_response_for missing_inputs
   end
 
-  item = Items.new do |i|
-    i.name        = params["name"]
-    i.item        = params["item"]
-    i.location    = params["seen"]
-    i.description = params["desc"]
-    i.kind        = "lost"
-    i.public_id   = Brooklynt.new.to_i
-  end
+  item = LostItem.new params
 
   item.save
 
@@ -80,14 +73,7 @@ get "/lost/addfound" do
     return invalid_input_response_for missing_inputs
   end
 
-  item = Items.new do |i|
-    i.name        = params["name"]
-    i.item        = params["item"]
-    i.location    = params["at"]
-    i.description = params["desc"]
-    i.kind        = "found"
-    i.public_id   = Brooklynt.new.to_i
-  end
+  item = FoundItem.new params
 
   item.save
 
