@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :location
       t.string :description
       t.string :kind
+      t.string :public_id
     end
   end
 

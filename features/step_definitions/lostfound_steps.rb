@@ -7,6 +7,8 @@ Given /^a "([^\"]*)" (found|lost) by "([^\"]*)" in "([^\"]*)" is in the database
     i.location    = location
     i.description = description
     i.kind        = kind
+    # Don't hit the Brooklynt API just for this
+    i.public_id   = rand(10000)
   end
 
   item.save

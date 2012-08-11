@@ -1,4 +1,5 @@
 $: << "."
+$: << "lib"
 
 require 'sinatra'
 require 'sinatra/activerecord'
@@ -7,6 +8,7 @@ require 'json'
 
 require 'models/items'
 require 'helpers'
+require 'preeventualist/brooklynt'
 
 set :database, "sqlite://db/preeventualist.db"
 
@@ -64,6 +66,7 @@ get "/lost/addlost" do
     i.location    = params["seen"]
     i.description = params["desc"]
     i.kind        = "lost"
+    i.public_id   = Brooklynt.new.to_i
   end
 
   item.save
@@ -83,6 +86,7 @@ get "/lost/addfound" do
     i.location    = params["at"]
     i.description = params["desc"]
     i.kind        = "found"
+    i.public_id   = Brooklynt.new.to_i
   end
 
   item.save

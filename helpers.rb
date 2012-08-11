@@ -50,8 +50,11 @@ helpers do
       return "No results found :(" if results.empty?
 
       # _why's version didn't have a public "kind" value
+      # or any kind of ID number
       result = results.first.to_hash
-      result.delete :kind
+      result.delete_if do |k,_|
+        [:kind, :public_id].include? k
+      end
 
       # _why's guide specifies only one result, with unnamed fields
       # separated by "--\n"
