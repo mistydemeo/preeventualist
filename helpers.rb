@@ -20,7 +20,7 @@ helpers do
     elsif mode == :lost
       required_fields.concat ["seen"]
     end
-    
+
     required_fields.select do |field|
       not params[field]
     end
@@ -36,7 +36,6 @@ helpers do
 
   def invalid_input_response_for errors
     if not json_requested?
-      p errors
       erb :error, :locals => {:errors => errors}
     else
       {"errors" => [{"message" => "Missing input(s)", "code" => 400, "missing" => errors}]}
