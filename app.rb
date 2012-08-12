@@ -1,5 +1,5 @@
-$: << "."
-$: << "lib"
+$: << File.join(__FILE__, "..")
+$: << File.join(__FILE__, "../lib")
 
 require 'sinatra'
 require 'sinatra/activerecord'
