@@ -6,13 +6,13 @@ require 'sinatra/activerecord'
 require 'active_record'
 require 'json'
 
+require "config/config"
+
 require 'models/items'
 require 'models/post'
 require 'models/poster'
 require 'helpers'
 require 'preeventualist/brooklynt'
-
-set :database, "sqlite://db/preeventualist.db"
 
 get "/" do
   erb :homepage
