@@ -7,6 +7,8 @@ require 'active_record'
 require 'json'
 
 require 'models/items'
+require 'models/post'
+require 'models/poster'
 require 'helpers'
 require 'preeventualist/brooklynt'
 

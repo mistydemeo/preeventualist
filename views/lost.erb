@@ -30,6 +30,11 @@
  follow.  First, a bit of important news from our beloved magistrate.  (The kids call
  him Uncle Von Guffuncle. Tehe!)
 
+ IMPORTANT NEWS
+ ==============
+<%= news_string = Post.limit(10).reverse.map(&:post).join("\n").chomp
+    news_string.each_line.map {|l| l.prepend " "}.join %>
+
  USING THE L&amp;F SERVER
  ====================
  The L&amp;F is a free service.  The acts of losing and finding are essential qualities in
