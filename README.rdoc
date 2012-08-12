@@ -1,0 +1,15 @@
+= The Preeventualist Lost and Found Service
+
+== Introduction
+The Preeventualist Lost and Found Service was a web service introduced in {chapter 6}[http://mislav.uniqpath.com/poignant-guide/book/chapter-6.html] of {why's Poignant Guide to Ruby}[http://mislav.uniqpath.com/poignant-guide/]. It drove a few exercises, which centered around writing a library to access an ultra-simple REST API. Unfortunately why didn't open-source the code before he disappeared from the internet, so the exercises have been broken for a few years. Boo!
+
+This reborn version of the service is 100% compatible with the API specified in the Poignant Guide, but also adds some new features like JSON and {Brooklyn Integer}[http://brooklynintegers.com/] support.
+
+== API
+Do you really have to ask?
+
+== Where to find it online
+Nowhere, I haven't put it up on a public server yet.
+
+== License
+The source code is licensed under the {WTFPL}[http://sam.zoy.org/wtfpl/]. See COPYING for details.
