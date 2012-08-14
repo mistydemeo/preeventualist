@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "sinatra-activerecord"
   s.add_runtime_dependency "activerecord"
   s.add_runtime_dependency "sqlite3"
+  s.add_runtime_dependency "foreigner"
 
   s.add_development_dependency "cucumber"
   s.add_development_dependency "rspec"
