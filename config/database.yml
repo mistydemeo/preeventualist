@@ -1,7 +1,7 @@
 development:
-  adapter: sqlite3
+  adapter: postgresql
   encoding: utf8
-  database: db/development.db
+  database: preeventualist
 
 test:
   adapter: sqlite3
