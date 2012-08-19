@@ -32,8 +32,7 @@
 
  IMPORTANT NEWS
  ==============
-<%= news_string = Post.limit(10).reverse.map(&:post).join("\n").chomp
-    news_string.each_line.map {|l| l.prepend " "}.join %>
+<%= display_newsposts %>
 
  USING THE L&amp;F SERVER
  ====================
