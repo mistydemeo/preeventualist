@@ -1,6 +1,6 @@
 helpers do
   def json_requested?
-    params["json"] == "true"
+    params["format"] == "json"
   end
 
   def validate_count
