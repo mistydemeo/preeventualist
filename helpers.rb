@@ -70,6 +70,7 @@ helpers do
     status 200
 
     if not json_requested?
+      content_type :text
       "Thanks for submitting your #{params["item"]}!"
     end
   end
