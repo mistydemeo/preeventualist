@@ -81,3 +81,13 @@ get "/lost/addfound" do
 
   submission_confirmation
 end
+
+not_found do
+  status 404
+  erb :'404'
+end
+
+error do
+  status 500
+  erb :internal_error
+end
