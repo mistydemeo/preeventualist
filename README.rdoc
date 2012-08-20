@@ -6,7 +6,9 @@ The Preeventualist Lost and Found Service was a web service introduced in {chapt
 This reborn version of the service is 100% compatible with the API specified in the Poignant Guide, but also adds some new features like JSON and {Brooklyn Integer}[http://brooklynintegers.com/] support.
 
 == API
-Do you really have to ask?
+See {chapter 6}[http://mislav.uniqpath.com/poignant-guide/book/chapter-6.html] of the Poignant Guide.
+
+This version of the service has one notable difference: you can receive any API response as JSON by including "format=json" in your query. JSON responses can return multiple items if more than one matching item is found; the number of responses is controlled using the "limit" parameter, up to a maximum of 100. In addition, the JSON responses include a "public_id" key, which is a guaranteed-unique identifier for a given item, and a "kind" key, which indicates whether an item is "lost" or "found".
 
 == Where to find it online
 Nowhere, I haven't put it up on a public server yet.
