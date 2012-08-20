@@ -3,9 +3,9 @@ helpers do
     params["format"] == "json"
   end
 
-  def validate_count
-    if not (params["count"] && params["count"] < 100 && params["count"] > 0)
-      params["count"] = 10
+  def validate_limit
+    if not (params["limit"] && params["limit"] < 100 && params["limit"] > 0)
+      params["limit"] = 10
     end
   end
 

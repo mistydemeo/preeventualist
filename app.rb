@@ -28,9 +28,9 @@ get "/lost/search" do
     return invalid_query_response
   end
 
-  validate_count
+  validate_limit
 
-  return search_response_for Items.where(:item => params["q"]).limit params["count"]
+  return search_response_for Items.where(:item => params["q"]).limit params["limit"]
 end
 
 get "/lost/searchlost" do
@@ -39,9 +39,9 @@ get "/lost/searchlost" do
     return invalid_query_response
   end
 
-  validate_count
+  validate_limit
 
-  return search_response_for LostItem.where(:item => params["q"]).limit params["count"]
+  return search_response_for LostItem.where(:item => params["q"]).limit params["limit"]
 end
 
 get "/lost/searchfound" do
@@ -50,9 +50,9 @@ get "/lost/searchfound" do
     return invalid_query_response
   end
 
-  validate_count
+  validate_limit
 
-  return search_response_for FoundItem.where(:item => params["q"]).limit params["count"]
+  return search_response_for FoundItem.where(:item => params["q"]).limit params["limit"]
 end
 
 # This should really be POST, but Poignant Guide's API didn't distinguish
