@@ -84,10 +84,26 @@ end
 
 not_found do
   status 404
-  erb :'404'
+  if not json_requested?
+    erb :'404'
+  else
+    content_type :json
+    {
+      "code"  => 404,
+      "error" => "The requested page could not be found."
+    }.to_json
+  end
 end
 
 error do
   status 500
-  erb :internal_error
+  if not json_requested?
+    erb :internal_error
+  else
+    content_type :json
+    {
+      "code"  => 500,
+      "error" => "An unspecified error occurred."
+    }.to_json
+  end
 end
