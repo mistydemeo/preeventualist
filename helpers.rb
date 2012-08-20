@@ -66,12 +66,15 @@ helpers do
     end
   end
 
-  def submission_confirmation
+  def submission_confirmation item
     status 200
 
     if not json_requested?
       content_type :text
       "Thanks for submitting your #{params["item"]}!"
+    else
+      content_type :json
+      item.to_hash.to_json
     end
   end
 

@@ -66,7 +66,7 @@ get "/lost/addlost" do
 
   item.save
 
-  submission_confirmation
+  submission_confirmation item
 end
 
 get "/lost/addfound" do
@@ -79,7 +79,7 @@ get "/lost/addfound" do
 
   item.save
 
-  submission_confirmation
+  submission_confirmation item
 end
 
 not_found do
